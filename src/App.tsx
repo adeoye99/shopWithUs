@@ -1,35 +1,138 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { createHashRouter } from 'react-router';
+import { RouterProvider } from 'react-router';
 
-function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
-
-export default App
+  const router = createHashRouter([
+    {
+      path: "/",
+      element: <div></div>
+      // children: [
+      //   {
+      //     index: true,
+      //     element: <DashboardPage />,
+      //   },
+      //   {
+      //     path: "provipay",
+      //     element: <Navigate to="/" />,
+      //   },
+  
+      //   {
+      //     path: "single-transfer",
+      //     children: [
+      //       {
+      //         path: "providus",
+      //         element: <SingleTransferToProvidusPage />,
+      //       },
+      //       {
+      //         path: "providus/:id",
+      //         element: <SingleTransferToProvidusPage />,
+      //       },
+      //       {
+      //         path: "others",
+      //         element: <SingleTransferToOtherBanksPage />,
+      //       },
+      //       {
+      //         path: "own",
+      //         element: <SingleTransferToOwnAccount />,
+      //       },
+      //       {
+      //         path: "others/:id",
+      //         element: <SingleTransferToOtherBanksPage />,
+      //       },
+      //       {
+      //         path: "pending",
+      //         element: <PendingTransfersPage />,
+      //       },
+      //       {
+      //         path: "transactions",
+      //         element: <SingleTransctionsPage />,
+      //       },
+  
+      //       {
+      //         path: "complete/:type/:data",
+      //         element: <TransferCompletedPage />,
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     path: "fx",
+      //     children: [
+      //       {
+      //         path: "providus",
+      //         element: <FXSingleTransferToProvidusPage />,
+      //       },
+  
+      //       {
+      //         path: "others",
+      //         element: <FXSingleTransferToOtherBanksPage />,
+      //       },
+      //       {
+      //         path: "own",
+      //         element: <FXSingleTransferToOwnPage />,
+      //       },
+  
+      //       {
+      //         path: "pending",
+      //         element: <FXPendingTransfersPage />,
+      //       },
+      //       // {
+      //       //   path: "transactions",
+      //       //   element: <SingleTransctionsPage />,
+      //       // },
+      //       {
+      //         path: "complete/:type/:data",
+      //         element: <TransferCompletedFxPage />,
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     path: "bulk-transfer",
+      //     children: [
+      //       {
+      //         path: "providus",
+      //         element: <BulkTransferPage />,
+      //       },
+      //       {
+      //         path: "others",
+      //         element: <BulkTransferPage />,
+      //       },
+      //       {
+      //         path: "process/:id",
+      //         element: <BulkTransferByIdPage />,
+      //       },
+      //       {
+      //         path: "file/:fileId",
+      //         element: <BulkFilePage />,
+      //       },
+      //       {
+      //         path: "all",
+      //         element: <AllBulk />,
+      //       },
+      //       {
+      //         path: ":status",
+      //         element: <BatchByStatusPage />,
+      //       },
+      //       {
+      //         path: "uploads",
+      //         element: <UserBulkTransferPage />,
+      //       },
+      //     ],
+      //   },
+  
+       
+    
+  
+        
+       
+       
+      // ],
+    },
+   
+  ]);
+  
+  const App = () => {
+    return <RouterProvider router={router} />;
+  };
+  
+  export default App;
