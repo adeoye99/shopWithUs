@@ -1,12 +1,11 @@
-import './App.css'
 import { createHashRouter } from 'react-router';
 import { RouterProvider } from 'react-router';
-
+import { MainLayout } from './Layout/main-layout';
 
   const router = createHashRouter([
     {
       path: "/",
-      element: <div></div>
+      element: <MainLayout/>
       // children: [
       //   {
       //     index: true,
